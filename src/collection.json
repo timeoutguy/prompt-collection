@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Explain me about {{subject}}",
+    "prompt": "Explain the concept of {{subject}} in simple terms, including its use cases and potential benefits.",
+    "replaceable": ["subject"]
+  },
+  {
+    "name": "Generate {{language}} code for {{task}}",
+    "prompt": "Generate {{language}} code to perform the following task: {{task}}. Provide comments to explain the code.",
+    "replaceable": ["language", "task"]
+  },
+  {
+    "name": "Debug my {{language}} code",
+    "prompt": "I have the following {{language}} code:\n\n{{code}}\n\nIt's supposed to {{expected_behavior}}, but it's currently {{actual_behavior}}. Can you help me identify and fix the bug?",
+    "replaceable": ["language", "code", "expected_behavior", "actual_behavior"]
+  },
+  {
+    "name": "Refactor my code",
+    "prompt": "Please refactor the following code to improve its readability, maintainability, and performance:\n\n{{code}}\n\nExplain the changes you made and why.",
+    "replaceable": ["code"]
+  },
+  {
+    "name": "Write unit tests for {{language}} code",
+    "prompt": "Write unit tests for the following {{language}} code using {{testing_framework}}:\n\n{{code}}\n\nEnsure that all major functionalities are covered.",
+    "replaceable": ["language", "testing_framework", "code"]
+  },
+  {
+    "name": "Convert {{language1}} code to {{language2}}",
+    "prompt": "Convert the following code from {{language1}} to {{language2}}:\n\n{{code}}\n\nMaintain the same functionality and provide comments to explain the conversion.",
+    "replaceable": ["language1", "language2", "code"]
+  },
+  {
+    "name": "Generate documentation for {{language}} code",
+    "prompt": "Generate documentation for the following {{language}} code:\n\n{{code}}\n\nInclude descriptions of classes, functions, and parameters.",
+    "replaceable": ["language", "code"]
+  },
+  {
+    "name": "Optimize {{language}} code for performance",
+    "prompt": "Optimize the following {{language}} code for performance, focusing on reducing execution time and memory usage:\n\n{{code}}\n\nExplain the optimizations you made and their impact.",
+    "replaceable": ["language", "code"]
+  },
+  {
+    "name": "Find vulnerabilities in {{language}} code",
+    "prompt": "Analyze the following {{language}} code for potential security vulnerabilities, such as SQL injection, cross-site scripting (XSS), and buffer overflows:\n\n{{code}}\n\nProvide recommendations for mitigating these vulnerabilities.",
+    "replaceable": ["language", "code"]
+  },
+  {
+    "name": "Explain this regex: {{regex}}",
+    "prompt": "Explain what the following regular expression does: {{regex}}. Provide examples of strings that would match and not match this regex.",
+    "replaceable": ["regex"]
+  }
+]
