@@ -1,9 +1,9 @@
-name: Create Release
+name: Build TypeScript
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 jobs:
   release:
@@ -16,13 +16,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build (if needed)
+      - name: Build
         run: npm run build
+
+      - name: Zip build output
+        run: zip -r build.zip dist/
 
       - name: Create GitHub Release
         id: create_release
@@ -35,16 +38,9 @@ jobs:
           draft: false
           prerelease: false
 
-      # Optionally, upload assets (e.g., a zip file of your project)
-      # - name: Zip project files
-      #   run: zip -r release.zip .
-
-      # - name: Upload Release Asset
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ./release.zip
-      #     asset_name: release.zip
-      #     asset_content_type: application/zip
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
