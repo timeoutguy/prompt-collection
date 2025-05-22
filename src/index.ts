@@ -13,7 +13,7 @@ import clipboard from "clipboardy";
     console.log(`🌟 ===============================\n`);
 
     const promptIndex = await select({
-        message: '📝 Please select a prompt',
+        message: '📝 Please select a prompt:',
         loop: false,
         choices: collection.map((element, index) => {
             return {
