@@ -1,5 +1,8 @@
 name: Build TypeScript
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
